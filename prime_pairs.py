@@ -18,7 +18,7 @@ def parse_args():
     return parser.parse_known_args()
 
 def is_prime_pairs_seq(p):
-    primes = [3, 5, 7, 11, 13, 17]
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]
     for i in range(len(p) - 1):
         if p[i] + p[i + 1] not in primes:
             return False
@@ -28,7 +28,7 @@ def is_prime_pairs_strong_seq(p, n):
     '''
     Finds "strong" wrap around prime pair sequences
     '''
-    primes = [3, 5, 7, 11, 13, 17]
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]
     for i in range(len(p)):
         if p[i] + p[(i + 1) % n] not in primes:
             return False
