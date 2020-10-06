@@ -1,10 +1,9 @@
 '''
 Matt Parker's Math Puzzles: Prime Pairs Puzzle
+https://www.youtube.com/watch?v=AXfl_e33Gt4
 
 Find a permutation of the numbers 1 through 9 such that
 the sum of each consecutive pair of numbers is prime.
-
-https://www.youtube.com/watch?v=AXfl_e33Gt4
 '''
 
 import argparse
