@@ -8,6 +8,19 @@ the sum of each consecutive pair of numbers is prime.
 
 import argparse
 import itertools
+import math
+
+primes = []
+
+def is_prime(n):
+    if n in primes:
+        return True
+
+    for i in range(2, int(math.sqrt(n) + 1)):
+        if n % i == 0:
+            return False
+    primes.append(n)
+    return True
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -17,9 +30,8 @@ def parse_args():
     return parser.parse_known_args()
 
 def is_prime_pairs_seq(p):
-    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]
     for i in range(len(p) - 1):
-        if p[i] + p[i + 1] not in primes:
+        if not is_prime(p[i] + p[i + 1]):
             return False
     return True
 
@@ -27,9 +39,8 @@ def is_prime_pairs_strong_seq(p, n):
     '''
     Finds "strong" wrap around prime pair sequences
     '''
-    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]
     for i in range(len(p)):
-        if p[i] + p[(i + 1) % n] not in primes:
+        if not is_prime(p[i] + p[(i + 1) % n]):
             return False
     return True
 
